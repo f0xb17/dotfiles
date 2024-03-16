@@ -100,6 +100,7 @@ packages=(
     "p7zip"
     "libheif"
     "nvim"
+    "ntfs-3g"
 )
 
 for package in "${packages[@]}"; do
@@ -221,7 +222,6 @@ echo "Performing Software Installation"
 echo "-------------------------------------------------"
 
 apps=(
-    "chromium"
     "bitwarden"
     "discord"
     "gufw"
@@ -299,6 +299,7 @@ aur_apps=(
     "intellij-idea-ultimate-edition"
     "brother-mfc-l2710dw"
     "microsoft-edge-stable-bin"
+    "threema-desktop"
 )
 
 aur_sdks=(
