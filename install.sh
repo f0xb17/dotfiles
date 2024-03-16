@@ -303,7 +303,6 @@ aur_apps=(
     "intellij-idea-ultimate-edition"
     "brother-mfc-l2710dw"
     "microsoft-edge-stable-bin"
-    "threema-desktop"
 )
 
 aur_sdks=(
