@@ -48,6 +48,8 @@ if [[ "$1" == "--kde" ]]; then
     echo "-------------------------------------------------"
 
     sudo pacman -S --needed --noconfirm flatpak xdg-desktop-portal xdg-desktop-portal-kde xdg-desktop-portal-gtk
+    
+    echo "---------------------------------------------------------------"
 fi
 
 if [[ "$1" == "--cinnamon" ]]; then
@@ -56,6 +58,8 @@ if [[ "$1" == "--cinnamon" ]]; then
     echo "-------------------------------------------------"
 
     sudo pacman -S --needed --noconfirm flatpak xdg-desktop-portal xdg-desktop-portal-xapp xdg-desktop-portal-gtk gnome-software xarchiver cinnamon-translations
+    
+    echo "---------------------------------------------------------------"
 fi
 
 if [[ "$1" == "--xfce" ]]; then
@@ -64,10 +68,9 @@ if [[ "$1" == "--xfce" ]]; then
     echo "-------------------------------------------------"
     
     sudo pacman -S --needed --noconfirm flatpak xdg-desktop-portal xdg-desktop-portal-xapp xdg-desktop-portal-gtk gnome-software
+    
+    echo "---------------------------------------------------------------"
 fi
-
-
-echo "---------------------------------------------------------------"
 
 # Installing base packages
 
