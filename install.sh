@@ -171,7 +171,7 @@ sudo ln -sf $HOME/.dotconf/root.conf /etc/cmdline.d/
 sudo ln -sf $HOME/.dotconf/nvidia.conf /etc/modprobe.d/
 sudo ln -sf $HOME/.dotconf/environment /etc/
 sudo ln -sf $HOME/.dotconf/mkinitcpio.conf /etc/
-sudo ln -sf $Home/.dotconf/makepkg.conf /etc/
+sudo ln -sf $HOME/.dotconf/makepkg.conf /etc/
 
 echo "---------------------------------------------------------------"
 
