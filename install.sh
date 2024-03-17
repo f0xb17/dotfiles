@@ -28,8 +28,8 @@ echo "Copy files to .dotconf location"
 echo "-------------------------------------------------"
 
 cp -r files/makepkg.conf $HOME/.dotconf/
-cp -r files/.zshrc $HOME/
-cp -r files/.aliases $HOME/
+cp -r files/.zshrc $HOME/.dotconf/
+cp -r files/.aliases $HOME/.dotconf/
 cp -r files/nvidia.conf $HOME/.dotconf
 cp -r files/root.conf $HOME/.dotconf
 cp -r files/environment $HOME/.dotconf
@@ -121,7 +121,7 @@ echo "-------------------------------------------------"
 echo "Performing Oh-My-Zsh Installation"
 echo "-------------------------------------------------"
 
-mkdir zsh && cd zshx
+mkdir zsh && cd zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 cd ../
 rm -rf zsh
