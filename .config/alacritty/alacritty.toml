@@ -1,0 +1,14 @@
+import = [
+    "~/.themes/alacritty/gruvbox_dark.toml"
+]
+
+[window]
+decorations = "None"
+opacity = 0.5
+blur = true
+startup_mode = "Maximized"
+dynamic_title = true
+
+[font]
+normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
+size = 13.0
