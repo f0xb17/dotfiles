@@ -202,3 +202,6 @@ exec feh --bg-scale --zoom fill /home/$(whoami)/Pictures/Wallpapers/backiee-1353
 
 # Picom compositor for X11
 exec --no-startup-id picom --config ~/.config/picom/picom.conf -b
+
+# Polybar
+exec polybar
