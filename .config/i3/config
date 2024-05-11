@@ -199,3 +199,6 @@ smart_borders on
 
 # Wallpaper Config
 exec feh --bg-scale --zoom fill /home/$(whoami)/Pictures/Wallpapers/backiee-135343-landscape.jpg
+
+# Picom compositor for X11
+exec --no-startup-id picom --config ~/.config/picom/picom.conf -b
