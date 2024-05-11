@@ -1,1 +1,1 @@
-@theme "/home/$(whoami)/.local/share/rofi/themes/squared-everforest.rasi"
+@theme "/home/$(whoami)/.themes/rofi/squared-gruvbox.rasi"
