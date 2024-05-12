@@ -190,18 +190,22 @@ bindsym $mod+r mode "resize"
 #       status_command i3status
 #}
 
-# Gap Config
-gaps inner 20
-gaps outer 5
-
-# Activate smart borders (always)
+### --- Basic Config --- ###
+hide_edge_borders both
+default_border pixel 0
+default_floating_border pixel 0
 smart_borders on
+gaps inner 15
+gaps outer 15
+# -- Titlebar Styling -- #
+# client.focused #1d2021 #1d2021 #d8a657 #d8a657
 
-# Wallpaper Config
-exec feh --bg-scale --zoom fill /home/$(whoami)/Pictures/Wallpapers/backiee-135343-landscape.jpg
-
-# Picom compositor for X11
+### --- Starting Scripts --- ###
+# -- Wallpaper -- #
+exec --no-startup-id feh --bg-scale --zoom fill /home/$(whoami)/Pictures/Wallpapers/backiee-217023-landscape.jpg
+# -- Compositor -- #
 exec --no-startup-id picom --config ~/.config/picom/picom.conf -b
-
-# Polybar
-exec polybar
+# -- Topbar -- #
+exec --no-startup-id polybar
+# -- Gnome Keyring (Passwordmanagers etc.) -- #
+exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=ssh,secrets,pkcs11
