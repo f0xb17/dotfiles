@@ -4,8 +4,8 @@ import = [
 
 [window]
 decorations = "None"
-opacity = 0.5
-blur = true
+# opacity = 0.5
+# blur = true
 startup_mode = "Maximized"
 dynamic_title = true
 
