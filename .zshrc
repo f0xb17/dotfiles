@@ -108,8 +108,8 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Aliases
-if [ -f ~/.aliases ]; then
-    . ~/.aliases
+if [ -f ~/.zshaliases ]; then
+    . ~/.zshaliases
 fi
 
 # zoxide
