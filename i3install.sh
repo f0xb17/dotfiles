@@ -1,5 +1,7 @@
+#!/bin/sh
+
 echo "###################################"
-echo "#       Installing Software       #"
+echo "#      Installing i3 Packages     #"
 echo "###################################"
 
 apps=(
@@ -11,14 +13,15 @@ apps=(
     "gnome-keyring"
     "nwg-look"
     "flameshot"
-    "python-distutils-extra"
-    "playerctl"
     "flatpak"
     "xdg-desktop-portal"
     "xdg-desktop-portal-xapp"
     "xdg-desktop-portal-gtk"
     "thunar"
     "xarchiver"
+    "pavucontrol"
+    "base-devel"
+    "neovim"
 )
 
 for app in "${apps[@]}"; do
@@ -29,7 +32,15 @@ for app in "${apps[@]}"; do
 done
 
 echo "###################################"
-echo "#       Copying Config            #"
+echo "#         Installing yay          #"
+echo "###################################"
+
+git clone https://aur.archlinux.org/yay.git && cd yay
+makepkg -si
+cd ../ && rm -rf yay
+
+echo "###################################"
+echo "#         Copying Config          #"
 echo "###################################"
 
 mv .config/alacrity /home/$(whoami)/.config/
@@ -41,9 +52,11 @@ mv .config/rofi /home/$(whoami)/.config/
 mkdir /home/$(whoami)/.themes
 mv .themes/rofi /home/$(whoami)/.themes
 mv .Xressources /home/$(whoami)/
+mv .zshrc /home/$(whoami)/
+mv .zshaliases /home/$(whoami)/
 
 echo "###################################"
-echo "#       Git things up             #"
+echo "#         Git things up           #"
 echo "###################################"
 
 echo "### --- Fetching Alacritty Themes --- ###"
@@ -56,6 +69,8 @@ rm -rf alacritty-theme
 
 echo "### --- Fetching Spotify Polybar --- ###"
 
+sudo pacman -S --needed --noconfirm python-distutils-extra playerctl
+yay -S --noconfirm zscroll-git
 git clone https://github.com/PrayagS/polybar-spotify.git
 cd polybar-spotify
 mv get_spotify_status.sh /home/$(whoami)/.config/polybar/scripts/
