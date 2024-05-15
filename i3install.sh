@@ -22,6 +22,8 @@ apps=(
     "pavucontrol"
     "base-devel"
     "neovim"
+    "blueman"
+    "system-config-printer"
 )
 
 for app in "${apps[@]}"; do
@@ -37,7 +39,8 @@ echo "###################################"
 
 git clone https://aur.archlinux.org/yay.git && cd yay
 makepkg -si
-cd ../ && rm -rf yay
+cd ../
+rm -rf yay
 
 echo "###################################"
 echo "#         Copying Config          #"
