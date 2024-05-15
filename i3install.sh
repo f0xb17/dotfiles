@@ -24,6 +24,38 @@ apps=(
     "neovim"
     "blueman"
     "system-config-printer"
+    "bluez"
+    "bluez-utils"
+    "cups"
+    "cups-pdf"
+    "zsh"
+    "which"
+    "github-cli"
+    "zsh-autosuggestions"
+    "zsh-syntax-highlighting"
+    "fzf"
+    "ufw"
+    "zoxide"
+    "exa"
+    "unrar"
+    "unzip"
+    "zip"
+    "p7zip"
+    "libheif"
+    "ntfs-3g"
+    "fastfetch"
+    "zlib"
+    "zenity"
+    "zxing-cpp"
+    "xvidcore"
+    "wget"
+    "whois"
+    "usbutils"
+    "aspell"
+    "aspell-de"
+    "earlyoom"
+    "rsync"
+    "reflector"
 )
 
 for app in "${apps[@]}"; do
@@ -96,6 +128,34 @@ sudo ln -sf /home/$(whoami)/.config/archconf/environemnt /etc/
 sudo ln -sf /home/$(whoami)/.config/archconf/makepkg.conf /etc/
 sudo ln -sf /home/$(whoami)/.config/archconf/mkinitcpio.conf /etc/
 sudo ln -sf /home/$(whoami)/.config/archconf/root.conf /etc/cmdline.d/
+
+echo "###################################"
+echo "#        Starting Services        #"
+echo "###################################"
+
+echo "### --- nVidia Services --- ###"
+
+sudo systemctl enable nvidia-suspend.service
+sudo systemctl enable nvidia-hibernate.service
+sudo systemctl enable nvidia-resume.service
+
+echo "### --- CUPS Service --- ###"
+
+sudo systemctl enable cups.service
+sudo systemctl enable cups.socket
+sudo systemctl start cups.service
+
+echo "### --- Bluetooth Service --- ###"
+
+modprobe btusb
+sudo systemctl enable bluetooth.service
+sudo systemctl start bluetooth.service
+
+echo "### --- UFW Firewall Service --- ###"
+
+sudo ufw default reject
+sudo ufw enable
+sudo systemctl enable ufw.service
 
 echo "###################################"
 echo "#         Git things up           #"
