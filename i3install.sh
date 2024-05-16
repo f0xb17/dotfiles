@@ -235,7 +235,7 @@ aurapps=(
 
 for aurapp in "${aurapps[@]}"; do
     echo "----------------------------------"
-    echo "Installing AUR-app: ${aur_app}"
+    echo "Installing AUR-app: ${aurapp}"
     echo "----------------------------------"
     yay -S --noconfirm ${aurapp}
 done
