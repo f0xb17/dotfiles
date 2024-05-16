@@ -1,8 +1,18 @@
 #!/bin/sh
 
 echo "###################################"
-echo "#      Installing i3 Packages     #"
+echo "#         System Update           #"
 echo "###################################"
+
+sudo pacman -Syu
+
+echo "###################################"
+echo "#     Installing Sys-Packages     #"
+echo "###################################"
+
+echo "### --- Software Removal: vim --- ###"
+
+sudo pacman -Rcns vim
 
 apps=(
     "git"
@@ -24,6 +34,7 @@ apps=(
     "neovim"
     "blueman"
     "system-config-printer"
+    "ranger"
     "bluez"
     "bluez-utils"
     "cups"
@@ -56,6 +67,31 @@ apps=(
     "earlyoom"
     "rsync"
     "reflector"
+    "bitwarden"
+    "discord"
+    "nvidia-settings"
+    "vlc"
+    "obs-studio"
+    "solaar"
+    "gufw"
+    "alacritty"
+    "cmake"
+    "clang"
+    "ninja"
+    "gdb"
+    "nodejs"
+    "npm"
+    "python"
+    "jdk-openjdk"
+    "kotlin"
+    "ttf-meslo-nerd"
+    "powerline-fonts"
+    "noto-fonts-cjk"
+    "noto-fonts-extra"
+    "noto-fonts-emoji"
+    "ttf-hack-nerd"
+    "ttf-jetbrains-mono-nerd"
+    "noto-fonts"
 )
 
 for app in "${apps[@]}"; do
@@ -64,6 +100,8 @@ for app in "${apps[@]}"; do
     echo "----------------------------------"
     sudo pacman -S --needed --noconfirm ${app}
 done
+
+echo "### --- Installation done --- ###"
 
 echo "###################################"
 echo "#         Installing yay          #"
@@ -179,3 +217,45 @@ mv get_spotify_status.sh /home/$(whoami)/.config/polybar/scripts/
 mv scroll_spotify_status.sh /home/$(whoami)/.config/polybar/scripts/
 cd ../
 rm -rf polybar-spotify
+
+echo "###################################"
+echo "#           AUR Packages          #"
+echo "###################################"
+
+aurapps=(
+    "intellij-idea-ultimate-edition"
+    "intellij-idea-ultimate-edition-jre"
+    "visual-studio-code-bin"
+    "brother-mfc-l2710dw"
+    "etcher-bin"
+    "brave-bin"
+    "zoom"
+    "swift-bin"
+)
+
+for aurapp in "${aurapps[@]}"; do
+    echo "----------------------------------"
+    echo "Installing AUR-app: ${aur_app}"
+    echo "----------------------------------"
+    yay -S --noconfirm ${aur_app}
+done
+
+echo "### --- Installation done --- ###"
+
+echo "### --- Change Folder Permissions: VS-Code --- ###"
+sudo chown -R $(whoami) /opt/visual-studio-code
+
+echo "###################################"
+echo "#     Finishing Installation      #"
+echo "###################################"
+
+yay -Scc
+yay -Yc
+
+sudo mkinitcpio -P
+
+echo "Installation finished. Performing reboot now?"
+echo "Press enter to continue..."
+read
+
+reboot
