@@ -3,11 +3,12 @@ import = [
 ]
 
 [window]
-decorations = "None"
+decorations = "Full"
 # opacity = 0.5
 # blur = true
 startup_mode = "Maximized"
 dynamic_title = true
+padding = { x = 20, y = 20 }
 
 [font]
 normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
