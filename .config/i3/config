@@ -192,13 +192,15 @@ bindsym $mod+r mode "resize"
 
 ### --- Basic Config --- ###
 hide_edge_borders both
-default_border pixel 0
-default_floating_border pixel 0
+default_border pixel 2
+default_floating_border pixel 2
 smart_borders on
 gaps inner 15
 gaps outer 15
 # -- Titlebar Styling -- #
-# client.focused #1d2021 #1d2021 #d8a657 #d8a657
+client.focused #d8a657 #d8a657 #d8a657 #d8a657
+client.unfocused #d8a657 #d8a657 #d8a657 #d8a657
+
 
 ### --- Starting Scripts --- ###
 # -- Wallpaper -- #
