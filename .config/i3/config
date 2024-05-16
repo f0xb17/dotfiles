@@ -194,7 +194,6 @@ bindsym $mod+r mode "resize"
 hide_edge_borders both
 default_border pixel 2
 default_floating_border pixel 2
-smart_borders on
 gaps inner 15
 gaps outer 15
 # -- Titlebar Styling -- #
