@@ -150,7 +150,8 @@ mv etc/mkinitcpio.conf /home/$(whoami)/.config/archconf/
 mv etc/cmdline.d/ /home/$(whoami)/.config/archconf/
 
 mv .config/alacritty /home/$(whoami)/.config/
-sudo mv .config/i3 /home/$(whoami)/.config/
+rm -rf /home/$(whoami)/.config/i3
+mv .config/i3 /home/$(whoami)/.config/
 mv .config/picom /home/$(whoami)/.config/
 mv .config/polybar /home/$(whoami)/.config/
 mkdir /home/$(whoami)/.config/polybar/scripts
