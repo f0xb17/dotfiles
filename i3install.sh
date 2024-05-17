@@ -158,7 +158,7 @@ mkdir /home/$(whoami)/.config/polybar/scripts
 mv .config/rofi /home/$(whoami)/.config/
 mkdir /home/$(whoami)/.themes
 mv .themes/rofi /home/$(whoami)/.themes
-mv .Xressources /home/$(whoami)/
+mv .Xresources /home/$(whoami)/
 mv .zshrc /home/$(whoami)/
 mv .zshaliases /home/$(whoami)/
 
