@@ -16,6 +16,7 @@ sudo pacman -Rcns vim
 
 apps=(
     "git"
+    "feh"
     "rofi"
     "polybar"
     "picom"
