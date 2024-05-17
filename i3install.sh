@@ -149,7 +149,7 @@ mv etc/makepkg.conf /home/$(whoami)/.config/archconf/
 mv etc/mkinitcpio.conf /home/$(whoami)/.config/archconf/
 mv etc/cmdline.d/ /home/$(whoami)/.config/archconf/
 
-mv .config/alacrity /home/$(whoami)/.config/
+mv .config/alacritty /home/$(whoami)/.config/
 sudo mv .config/i3 /home/$(whoami)/.config/
 mv .config/picom /home/$(whoami)/.config/
 mv .config/polybar /home/$(whoami)/.config/
