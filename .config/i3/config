@@ -210,5 +210,7 @@ exec --no-startup-id picom --config ~/.config/picom/picom.conf -b
 exec --no-startup-id polybar
 # -- Gnome Keyring (Passwordmanagers etc.) -- #
 exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=ssh,secrets,pkcs11
-# -- Blueman -- #
+# -- Discord -- #
+exec --no-startup-id discord --start-minimized
+# -- Bluetooth Utility -- #
 exec --no-startup-id blueman-applet
