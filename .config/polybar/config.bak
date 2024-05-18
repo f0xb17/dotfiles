@@ -1,0 +1,165 @@
+;==========================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/polybar/polybar
+;
+;   The README contains a lot of information
+;
+;==========================================================
+
+[colors]
+background = #1d2021
+background-alt = #1d2021
+foreground = #d8a657
+primary = #ddc7a1
+secondary = #a9b665
+alert = #ea6962
+disabled = #707880
+
+[bar/top]
+width = 100%
+height = 30pt
+radius = 0
+tray-padding = 5pt
+offset-x = 1%
+offset-y = 0.5%
+fixed-center = true
+line-size = 5pt
+
+dpi = 96
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+
+padding-left = 0
+padding-right = 1
+
+module-margin = 1
+
+separator = |
+separator-foreground = ${colors.disabled}
+
+modules-left = rofi xworkspaces xwindow
+modules-right = systray spotify pulseaudio-control-output cpu date2 date reboot poweroff
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+enable-ipc = true
+
+wm-restack = i3
+
+font-0 = JetBrainsMono Nerd Font:style=Bold:pixelsize=13;3
+
+# override-redirect = true
+
+[module/systray]
+type = internal/tray
+
+format-margin = 8pt
+tray-spacing = 16pt
+
+[module/xworkspaces]
+type = internal/xworkspaces
+
+label-active = %name%
+label-active-background = ${colors.background-alt}
+label-active-underline= ${colors.primary}
+label-active-padding = 1
+
+label-occupied = %name%
+label-occupied-padding = 1
+
+label-urgent = %name%
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 1
+
+label-empty = %name%
+label-empty-foreground = ${colors.disabled}
+label-empty-padding = 1
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:60:...%
+
+[module/pulseaudio-control-output]
+type = custom/script
+tail = true
+format-underline = ${colors.cyan}
+label-padding = 1
+label-foreground = ${colors.foreground}
+
+exec = pulseaudio-control --icons-volume " , " --icon-muted " " --format '$VOL_ICON $VOL_LEVEL' --node-nicknames-from "device.description" listen
+click-right = exec pavucontrol &
+click-left = pulseaudio-control togmute
+click-middle = pulseaudio-control --node-blacklist "alsa_output.pci-0000_01_00.1.hdmi-stereo-extra2" next-node
+scroll-up = pulseaudio-control --volume-max 130 up
+scroll-down = pulseaudio-control --volume-max 130 down
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix = "CPU "
+format-prefix-foreground = ${colors.primary}
+label = %percentage:2%%
+
+[module/date]
+type = internal/date
+interval = 1
+
+date = %H:%M
+
+label = %date%
+label-foreground = ${colors.primary}
+
+[module/date2]
+type = internal/date
+interval = 1
+
+date = %A, %d.%m
+
+label = %date%
+label-foreground = ${colors.primary}
+
+[module/rofi]
+type = custom/text 
+content ="  "
+content-padding = 1
+click-left = exec rofi -show run
+content-foreground =  ${colors.primary}
+
+[module/poweroff]
+type = custom/text 
+content ="  "
+content-padding = 1
+click-left = exec systemctl poweroff
+content-foreground =  ${colors.primary}
+
+[module/reboot]
+type = custom/text 
+content ="  "
+content-padding = 1
+click-left = exec systemctl reboot
+content-foreground =  ${colors.primary}
+
+[module/spotify]
+type = custom/script
+tail = true
+interval = 1
+; prefix symbol is shown before the text
+format-prefix = "   "
+format = <label>
+exec = ~/.config/polybar/scripts/scroll_spotify_status.sh
+
+[settings]
+screenchange-reload = true
