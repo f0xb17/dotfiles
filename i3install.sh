@@ -198,6 +198,10 @@ sudo ufw default reject
 sudo ufw enable
 sudo systemctl enable ufw.service
 
+echo "### --- Enable SSD Trim --- ###"
+
+sudo systemctl enable fstrim.timer
+
 echo "###################################"
 echo "#         Git things up           #"
 echo "###################################"
