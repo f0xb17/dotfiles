@@ -93,6 +93,7 @@ apps=(
     "ttf-hack-nerd"
     "ttf-jetbrains-mono-nerd"
     "noto-fonts"
+    "tmux"
 )
 
 for app in "${apps[@]}"; do
@@ -119,24 +120,9 @@ echo "###################################"
 echo "#         Installing zsh          #"
 echo "###################################"
 
-echo "### --- Fetching oh-my-zsh --- ###"
-
-mkdir zsh && cd zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-cd ../
-rm -rf zsh
-
 echo "### --- Enter Password to set zsh as standard shell --- ###"
 
 chsh -s $(which zsh) 
-
-echo "### --- Installing oh-my-zsh Plugins --- ###"
-
-git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
-git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autocomplete
-
 
 echo "###################################"
 echo "#         Copying Config          #"
