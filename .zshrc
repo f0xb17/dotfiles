@@ -82,3 +82,6 @@ eval "$(fzf --zsh)"
 if [ -x "$(command -v eza)" ]; then
     alias ls="eza --oneline --long --classify --icons --all"
 fi
+
+# tmux
+if [ "$TMUX" = "" ]; then tmux; fi
