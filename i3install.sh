@@ -224,6 +224,7 @@ aurapps=(
     "brave-bin"
     "zoom"
     "swift-bin"
+    "rofi-power-menu"
 )
 
 for aurapp in "${aurapps[@]}"; do
