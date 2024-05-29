@@ -147,7 +147,7 @@ mkdir /home/$(whoami)/.themes
 mv .themes/rofi /home/$(whoami)/.themes
 mv .Xresources /home/$(whoami)/
 mv .zshrc /home/$(whoami)/
-mv .zshaliases /home/$(whoami)/
+mv .zsh_aliases /home/$(whoami)/
 
 echo "### --- Creating Symlinks --- ###"
 
