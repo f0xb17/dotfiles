@@ -24,6 +24,7 @@ apps=(
     "nwg-look"
     "flameshot"
     "flatpak"
+    "gnome-keyring"
     "xdg-desktop-portal"
     "xdg-desktop-portal-xapp"
     "xdg-desktop-portal-gtk"
