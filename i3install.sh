@@ -21,7 +21,6 @@ apps=(
     "polybar"
     "picom"
     "alacritty"
-    "gnome-keyring"
     "nwg-look"
     "flameshot"
     "flatpak"
