@@ -148,6 +148,7 @@ mv .themes/rofi /home/$(whoami)/.themes
 mv .Xresources /home/$(whoami)/
 mv .zshrc /home/$(whoami)/
 mv .zsh_aliases /home/$(whoami)/
+mv .tmux.conf /home/$(whoami)/
 
 echo "### --- Creating Symlinks --- ###"
 
@@ -210,6 +211,9 @@ mv get_spotify_status.sh /home/$(whoami)/.config/polybar/scripts/
 mv scroll_spotify_status.sh /home/$(whoami)/.config/polybar/scripts/
 cd ../
 rm -rf polybar-spotify
+
+echo "### --- Fetching tmux Plugin Manager --- ###"
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 echo "###################################"
 echo "#           AUR Packages          #"
