@@ -58,6 +58,7 @@ bindsym $mod+Shift+q kill
 # bindsym $mod+d exec --no-startup-id dmenu_run
 bindsym $mod+d exec --no-startup-id rofi -show run
 bindsym $mod+s exec --no-startup-id rofi -show power-menu -modi "power-menu:rofi-power-menu --confirm=''"
+bindsym $mod+f exec --no-startup-id rofi -show window
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -95,7 +96,7 @@ bindsym $mod+h split h
 bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+# bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 # bindsym $mod+s layout stacking
@@ -193,27 +194,36 @@ bindsym $mod+r mode "resize"
 #}
 
 ### --- Basic Config --- ###
+set $bordersize 1
 hide_edge_borders both
-default_border pixel 2
-default_floating_border pixel 2
+default_border pixel $bordersize
+default_floating_border pixel $bordersizeR
 gaps inner 15
-gaps outer 15
-gaps top 50
+gaps outer 5
+gaps top 60
 # -- Titlebar Styling -- #
-client.focused #d8a657 #d8a657 #d8a657 #d8a657
-client.unfocused #d8a657 #d8a657 #d8a657 #d8a657
+set $bordercolor #F44336
 
+client.focused $bordercolor $bordercolor $bordercolor $bordercolor
+client.unfocused $bordercolor $bordercolor $bordercolor $bordercolorR
 
 ### --- Starting Scripts --- ###
 # -- Wallpaper -- #
-exec --no-startup-id feh --bg-scale --zoom fill /home/$(whoami)/Pictures/Wallpapers/backiee-114340-landscape.jpg
+exec --no-startup-id feh --bg-scale --zoom fill /home/$(whoami)/Pictures/Wallpapers/backiee-214272-landscape.jpg
 # -- Compositor -- #
 exec --no-startup-id picom --config ~/.config/picom/picom.conf -b
 # -- Topbar -- #
+# exec_always killall polybar
+# exec_always --no-startup-id /home/$(whoami)/.config/polybar/scripts/launch.sh
 exec --no-startup-id polybar
 # -- Gnome Keyring (Passwordmanagers etc.) -- #
-exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=ssh,secrets,pkcs11
+exec --no-startup-id dbus-update-activation-environment --all
+exec --no-startup-id gnome-keyring-daemon --start --components=ssh,secrets,pkcs11,login
 # -- Discord -- #
 exec --no-startup-id discord --start-minimized
 # -- Bluetooth Utility -- #
 exec --no-startup-id blueman-applet
+
+# -- Window Rules -- #
+for_window [class="Anydesk" instance="anydesk"] floating enable
+for_window [class="zoom" instance="zoom"] floating enable
