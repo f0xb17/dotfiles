@@ -195,14 +195,6 @@ echo "###################################"
 echo "#         Git things up           #"
 echo "###################################"
 
-echo "### --- Fetching Alacritty Themes --- ###"
-
-git clone https://github.com/alacritty/alacritty-theme.git
-mkdir /home/$(whoami)/.themes/alacritty-theme/
-cd alacritty-theme/themes/ && mv tomorrow_night_bright.toml /home/$(whoami)/.themes/alacritty-themes/
-cd ../../
-rm -rf alacritty-theme
-
 echo "### --- Fetching Spotify Polybar --- ###"
 
 sudo pacman -S --needed --noconfirm python-distutils-extra playerctl
