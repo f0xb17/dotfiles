@@ -1,5 +1,5 @@
 import = [
-    "~/.themes/alacritty/tomorrow_night_bright.toml"
+    "~/.themes/alacritty/theme.toml"
 ]
 
 [env]
