@@ -2,7 +2,7 @@
  * ROFI SQUARED THEME USING THE EVERFOREST PALETTE 
  * User                 : LR-Tech               
  * Theme Repo           : https://github.com/lr-tech/rofi-themes-collection
- * Modified             : f0xb17 - Colloid GTK Colors
+ * Modified             : f0xb17 - Catppuccin Mocha Colors
  *******************************************************************************/
 
 * {
@@ -10,10 +10,10 @@
 
     bg0:     #020202;
     bg1:     #020202;
-    fg0:     #F44336;
+    fg0:     #eaeaea;
 
     accent-color:     #F44336;
-    urgent-color:     #FFFFFF;
+    urgent-color:     #eaeaea;
 
     background-color:   transparent;
     text-color:         @fg0;
