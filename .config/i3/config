@@ -197,7 +197,7 @@ bindsym $mod+r mode "resize"
 set $bordersize 1
 hide_edge_borders both
 default_border pixel $bordersize
-default_floating_border pixel $bordersizeR
+default_floating_border pixel $bordersize
 gaps inner 15
 gaps outer 5
 gaps top 60
