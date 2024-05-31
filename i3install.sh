@@ -94,6 +94,7 @@ apps=(
     "ttf-jetbrains-mono-nerd"
     "noto-fonts"
     "tmux"
+    "xorg-xrandr"
 )
 
 for app in "${apps[@]}"; do
