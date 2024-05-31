@@ -1,0 +1,29 @@
+# Colors (Tomorrow Night Bright)
+# Modified by f0xb17 - 05/31/2024
+
+# Default colors
+[colors.primary]
+background = '#020202'
+foreground = '#eaeaea'
+
+# Normal colors
+[colors.normal]
+black   = '#000000'
+red     = '#5F819D'
+green   = '#8C9440'
+yellow  = '#DE935F'
+blue    = '#F44336'
+magenta = '#c397d8'
+cyan    = '#70c0ba'
+white   = '#424242'
+
+# Bright colors
+[colors.bright]
+black   = '#666666'
+red     = '#ff3334'
+green   = '#9ec400'
+yellow  = '#e7c547'
+blue    = '#7aa6da'
+magenta = '#b77ee0'
+cyan    = '#54ced6'
+white   = '#2a2a2a'
