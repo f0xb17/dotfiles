@@ -225,7 +225,3 @@ exec --no-startup-id discord --start-minimized
 exec --no-startup-id blueman-applet
 # -- Starting Polkit authetication agent -- #
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-
-# -- Window Rules -- #
-for_window [class="Anydesk" instance="anydesk"] floating enable
-for_window [class="zoom" instance="zoom"] floating enable
