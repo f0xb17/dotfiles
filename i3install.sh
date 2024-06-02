@@ -95,6 +95,7 @@ apps=(
     "noto-fonts"
     "tmux"
     "xorg-xrandr"
+    "polkit-gnome"
 )
 
 for app in "${apps[@]}"; do
