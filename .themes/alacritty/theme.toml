@@ -9,12 +9,12 @@ foreground = '#eaeaea'
 # Normal colors
 [colors.normal]
 black   = '#020202'
-red     = '#5F819D'
-green   = '#8C9440'
-yellow  = '#DE935F'
+red     = '#6FC2EF'
+green   = '#ACC267'
+yellow  = '#DDB26F'
 blue    = '#F44336'
-magenta = '#c397d8'
-cyan    = '#70c0ba'
+magenta = '#E1A3EE'
+cyan    = '#12CFC0'
 white   = '#eaeaea'
 
 # Bright colors
