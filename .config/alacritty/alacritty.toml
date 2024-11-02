@@ -1,32 +1,43 @@
+[general]
 import = [
     "~/.themes/alacritty/theme.toml"
 ]
+live_config_reload = true
+ipc_socket = true
 
 [env]
-WINIT_X11_SCALE_FACTOR = "1.0"
 TERM = "xterm-256color"
 
 [window]
-decorations = "Full"
-startup_mode = "Maximized"
+dimensions = { columns = 150, lines = 50 }
+decorations = "None"
+startup_mode = "Windowed"
 dynamic_title = true
 padding = { x = 20, y = 20 }
+opacity = 0.8
+blur = true
 
 [font]
 size = 13.0
 
 [font.bold]
-family = "JetBrainsMono Nerd Font"
+family = "FiraCode Nerd Font Mono"
 style = "Bold"
 
 [font.bold_italic]
-family = "JetBrainsMono Nerd Font"
+family = "FiraCode Nerd Font Mono"
 style = "Bold Italic"
 
 [font.italic]
-family = "JetBrainsMono Nerd Font"
+family = "FiraCode Nerd Font Mono"
 style = "Italic"
 
 [font.normal]
-family = "JetBrainsMono Nerd Font"
+family = "FiraCode Nerd Font Mono"
 style = "Regular"
+
+[cursor]
+style = { shape = "Block", blinking = "Always" }
+blink_interval = 650
+unfocused_hollow = false
+thickness = 0.20
