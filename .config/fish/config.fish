@@ -10,7 +10,10 @@ alias ll='eza -l --color=always --group-directories-first'  # long format
 alias lt='eza -aT --color=always --group-directories-first' # tree listing
 
 ### SETUP FZF ###
+fzf --fish | source
 fzf_configure_bindings --directory=\t
+set fzf_preview_dir_cmd eza --all --color=always
+set fzf_fd_opts --hidden --max-depth 1
 
 ### PACMAN AND YAY ###
 alias install='sudo pacman -S --needed --noconfirm'                     # Install package
