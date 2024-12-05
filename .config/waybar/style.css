@@ -1,0 +1,107 @@
+* {
+  font-family: "FiraCode Nerd Font Propo";
+  font-size: 16px;
+  min-height: 0;
+}
+
+window#waybar { 
+  background-color: alpha(#1e1e2e, 0.9);
+  color: #b4befe;
+  border-bottom: 1px solid #cba6f7;
+  box-shadow: 1px 2px 30px 2px rgba(17,17,27,0.87);
+}
+
+tooltip {
+  background:#1e1e2e;
+  border: 1px solid #cba6f7;
+  border-radius: 10px;
+  box-shadow: 1px 2px 30px 2px rgba(17,17,27,0.87);
+}
+
+tooltip label{
+  font-size: 14px;
+  color: #cba6f7;
+}
+
+menu {
+	background:  #1e1e2e;
+	color: #cba6f7;
+  border: 1px solid  #cba6f7;
+  font-size: 14px;
+  border-radius: 10px;
+  box-shadow: 1px 2px 30px 2px rgba(17,17,27,0.87);
+}
+
+menu :hover {
+  color:  #cba6f7;
+  background-color:  #11111b;
+  border-left: 1px solid #cba6f7;
+  border-right: 1px solid #cba6f7;
+}
+
+.modules-left {
+	padding: 0px 0px 0px 0px;
+}
+
+.modules-right {
+	padding: 0px 5px 0px 0px;
+}
+
+#tray,
+#clock,
+#bluetooth,
+#pulseaudio,
+#network,
+#language,
+#custom-shutdown,
+#custom-menu,
+#workspaces button {
+	padding: 0px 11px 0px 11px; 
+ 	min-width: 1px;
+	color: #b4befe;
+}
+
+#workspaces button.active { 
+	padding: 0px 11px 0px 11px; 
+	color:  #cba6f7;
+}
+
+#workspaces button:hover {
+  background: #cba6f7;
+  color:  #11111b;
+}
+
+#language {
+  font-weight: bold;
+}
+
+#pulseaudio.muted {
+  background-color:  #11111b;
+  color: #cba6f7;
+  border-bottom: 1px solid #cba6f7;
+}
+
+#clock {
+  font-weight: bold;
+}
+
+#bluetooth,
+#network {
+  font-size: 20px;
+}
+
+#tray > .needs-attention {
+	border-bottom: 2px solid #f38ba8;
+}
+
+#custom-menu {
+  font-size: 22px;
+}
+
+#custom-menu:hover,
+#custom-shutdown:hover,
+#bluetooth:hover,
+#pulseaudio:hover {
+  background: #cba6f7;
+  color:  #11111b;
+}
