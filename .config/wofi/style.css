@@ -1,0 +1,39 @@
+window {
+  margin: 0;
+  border: 1px solid #cba6f7;
+  background-color: alpha(#1e1e2e, 0.9);
+  font-family: "FiraCode Nerd Font Mono";
+  font-size: 16px;
+}
+
+#inner-box, 
+#outer-box {
+  margin: 10px;
+}
+
+#text {
+  color: #b4befe;
+}
+
+#input {
+  padding: 0px 10px 0px 10px;
+  margin: 5px;
+  color: #cba6f7;
+  background-color: transparent;
+  border: 1px solid #cba6f7;
+  margin-bottom: 10px;
+}
+
+#entry {
+  padding: 10px;
+}
+
+#entry:selected {
+  padding: 10px;
+  background: #11111b;
+}
+
+#entry arrow,
+#entry:selected #text {
+  color: #cba6f7;
+}
