@@ -1,32 +1,32 @@
 #box {
-	padding: 15px
+  padding: 15px
 }
 
 window {
-	background-color: alpha(#1e1e2e, 0.9);
-	border-radius: 20px;
-	border: 1px solid #cba6f7;
+  background-color: alpha(#1e1e2e, 0.9);
+  border-radius: 20px;
+  border: 1px solid #cba6f7;
 }
 
 button,
 image {
-	background: none;
-	border-style: none;
-	box-shadow: none;
+  background: none;
+  border-style: none;
+  box-shadow: none;
 }
 
 button {
-	padding: 4px;
-	margin: 0px 10px 0px 10px;
-	color: #eee;
-	font-size: 12px;
+  padding: 4px;
+  margin: 0px 10px 0px 10px;
+  color: #eee;
+  font-size: 12px;
 }
 
 button:hover {
-	border-radius: 2x;
+  border-radius: 2x;
 }
 
 button:focus {
-	box-shadow: none;
+  box-shadow: none;
 }
 
