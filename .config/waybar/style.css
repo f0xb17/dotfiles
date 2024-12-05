@@ -1,3 +1,5 @@
+@import "../hypr/colors.css";
+
 * {
   font-family: "FiraCode Nerd Font Propo";
   font-size: 16px;
@@ -5,38 +7,38 @@
 }
 
 window#waybar { 
-  background-color: alpha(#1e1e2e, 0.9);
-  color: #b4befe;
-  border-bottom: 1px solid #cba6f7;
+  background-color: alpha(@background1, 0.9);
+  color: @text;
+  border-bottom: 1px solid @accent;
   box-shadow: 1px 2px 30px 2px rgba(17,17,27,0.87);
 }
 
 tooltip {
-  background:#1e1e2e;
-  border: 1px solid #cba6f7;
+  background: @background1;
+  border: 1px solid @accent;
   border-radius: 10px;
   box-shadow: 1px 2px 30px 2px rgba(17,17,27,0.87);
 }
 
 tooltip label{
   font-size: 14px;
-  color: #cba6f7;
+  color: @accent;
 }
 
 menu {
-	background:  #1e1e2e;
-	color: #cba6f7;
-  border: 1px solid  #cba6f7;
+	background:  @background1;
+	color: @accent;
+  border: 1px solid  @accent;
   font-size: 14px;
   border-radius: 10px;
   box-shadow: 1px 2px 30px 2px rgba(17,17,27,0.87);
 }
 
 menu :hover {
-  color:  #cba6f7;
-  background-color:  #11111b;
-  border-left: 1px solid #cba6f7;
-  border-right: 1px solid #cba6f7;
+  color:  @accent;
+  background-color:  @background2;
+  border-left: 1px solid @accent;
+  border-right: 1px solid @accent;
 }
 
 .modules-left {
@@ -58,17 +60,17 @@ menu :hover {
 #workspaces button {
 	padding: 0px 11px 0px 11px; 
  	min-width: 1px;
-	color: #b4befe;
+	color: @text;
 }
 
 #workspaces button.active { 
 	padding: 0px 11px 0px 11px; 
-	color:  #cba6f7;
+	color: @accent;
 }
 
 #workspaces button:hover {
-  background: #cba6f7;
-  color:  #11111b;
+  background: @accent;
+  color:  @background2;
 }
 
 #language {
@@ -76,9 +78,9 @@ menu :hover {
 }
 
 #pulseaudio.muted {
-  background-color:  #11111b;
-  color: #cba6f7;
-  border-bottom: 1px solid #cba6f7;
+  background-color: @background2;
+  color: @accent;
+  border-bottom: 1px solid @accent;
 }
 
 #clock {
@@ -91,7 +93,7 @@ menu :hover {
 }
 
 #tray > .needs-attention {
-	border-bottom: 2px solid #f38ba8;
+	border-bottom: 2px solid @error;
 }
 
 #custom-menu {
@@ -102,6 +104,6 @@ menu :hover {
 #custom-shutdown:hover,
 #bluetooth:hover,
 #pulseaudio:hover {
-  background: #cba6f7;
-  color:  #11111b;
+  background: @accent;
+  color:  @background2;
 }
