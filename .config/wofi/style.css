@@ -1,7 +1,9 @@
+@import "/home/fox/.config/hypr/colors.css";
+
 window {
   margin: 0;
-  border: 1px solid #cba6f7;
-  background-color: alpha(#1e1e2e, 0.9);
+  border: 1px solid @accent;
+  background-color: alpha(@background1, 0.9);
   font-family: "FiraCode Nerd Font Mono";
   font-size: 16px;
 }
@@ -12,15 +14,15 @@ window {
 }
 
 #text {
-  color: #b4befe;
+  color: @text;
 }
 
 #input {
   padding: 0px 10px 0px 10px;
   margin: 5px;
-  color: #cba6f7;
+  color: @accent;
   background-color: transparent;
-  border: 1px solid #cba6f7;
+  border: 1px solid @accent;
   margin-bottom: 10px;
 }
 
@@ -30,10 +32,10 @@ window {
 
 #entry:selected {
   padding: 10px;
-  background: #11111b;
+  background: @background2;
 }
 
 #entry arrow,
 #entry:selected #text {
-  color: #cba6f7;
+  color: @accentr;
 }
