@@ -1,11 +1,13 @@
+@import "../hypr/colors.css";
+
 #box {
   padding: 15px
 }
 
 window {
-  background-color: alpha(#1e1e2e, 0.9);
+  background-color: alpha(@background1, 0.9);
   border-radius: 20px;
-  border: 1px solid #cba6f7;
+  border: 1px solid @accent;
 }
 
 button,
@@ -23,7 +25,7 @@ button {
 }
 
 button:hover {
-  border-radius: 2x;
+  border-radius: 2px;
 }
 
 button:focus {
