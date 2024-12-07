@@ -79,9 +79,9 @@ menu :hover {
 }
 
 #pulseaudio.muted {
-  background-color: @background2;
-  color: @accent;
-  border-bottom: 1px solid @accent;
+  background-color: @accent;
+  color: @background1;
+  border-bottom: 2px solid @accent;
 }
 
 #clock {
@@ -98,6 +98,7 @@ menu :hover {
 }
 
 #custom-menu {
+  color: @accent;
   font-size: 22px;
 }
 
