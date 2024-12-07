@@ -32,10 +32,11 @@ window {
 
 #entry:selected {
   padding: 10px;
+  font-weight: bold;
   background: @background2;
 }
 
 #entry arrow,
 #entry:selected #text {
-  color: @accentr;
+  color: @accent;
 }
