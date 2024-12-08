@@ -2,17 +2,17 @@
     "postion": "top",
     "height": 38,
 
-    "modules-left": ["custom/menu", "hyprland/workspaces"],
-    "modules-right": ["tray", "hyprland/language", "pulseaudio", "bluetooth", "network", "clock", "custom/shutdown"],
+    "modules-left": ["hyprland/workspaces", "hyprland/window"],
+    "modules-right": ["tray", "custom/seperator", "hyprland/language", "custom/seperator", "custom/spotify", "custom/seperator", "pulseaudio", "custom/seperator", "bluetooth", "custom/seperator", "clock", "custom/seperator", "custom/shutdown"],
 
     "hyprland/workspaces": {
         "disable-scoll": true,
         "disable-markup": true,
-        "format": "{icon}",
-        "format-icons": {
-            "default": "\uf10c",
-            "active": "\uf111"
-        }
+        "format": "{}"
+    },
+    "hyprland/window": {
+        "format": "[] = {title}",
+        "separate-outputs": true
     },
     "hyprland/language": {
         "format": "{}",
@@ -25,7 +25,7 @@
     },
     "pulseaudio": {
         "scroll-step": 5, // %, can be a float
-        "format": "{icon}",
+        "format": "{icon} {volume}%",
         "format-muted": "\ueee8",
         "format-icons": {
             "default": ["\uf026", "\uf027", "\uf028"]
@@ -65,10 +65,11 @@
          }
     },
     "custom/seperator": {
-        "format": " "
+        "format": "|"
     },
-    "custom/menu": {
-        "format": "\udb82\udcc7",
-        "on-click": "wofi --show drun"
+    "custom/spotify": {
+        "exec": "sh ~/.config/waybar/scripts/spotify.sh",
+        "interval": 1,
+        "format": "\uf1bc {}"
     }
 }
