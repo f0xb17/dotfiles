@@ -1,5 +1,6 @@
-@define-color background1 #1e1e2e;
-@define-color background2 #11111b;
-@define-color text #b4befe;
-@define-color accent  #cba6f7;
-@define-color error #f38ba8;
+@define-color background_col #242424;
+@define-color foreground_col #1e1e1e;
+@define-color text #9a9996;
+@define-color accent_col #78aeed;
+@define-color error_col #c01c28;
+@define-color shadow_col rgba(0, 0, 0, 0.8);
