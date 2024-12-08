@@ -3,7 +3,7 @@
 window {
   margin: 0;
   border: 1px solid @accent;
-  background-color: alpha(@background1, 0.9);
+  background-color: alpha(@background_col, 0.9);
   font-family: "FiraCode Nerd Font Mono";
   font-size: 16px;
 }
@@ -20,9 +20,9 @@ window {
 #input {
   padding: 0px 10px 0px 10px;
   margin: 5px;
-  color: @accent;
+  color: @accent_col;
   background-color: transparent;
-  border: 1px solid @accent;
+  border: 1px solid @accent_col;
   margin-bottom: 10px;
 }
 
@@ -33,10 +33,10 @@ window {
 #entry:selected {
   padding: 10px;
   font-weight: bold;
-  background: @background2;
+  background: @foreground_col;
 }
 
 #entry arrow,
 #entry:selected #text {
-  color: @accent;
+  color: @accent_col;
 }
