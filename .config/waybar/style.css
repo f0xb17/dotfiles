@@ -2,43 +2,41 @@
 
 * {
   font-family: "FiraCode Nerd Font Propo";
-  font-size: 16px;
+  font-size: 18px;
   min-height: 0;
 }
 
 window#waybar { 
-  background-color: alpha(@background1, 0.9);
+  background-color: alpha(@background_col, 0.9);
   color: @text;
-  border-bottom: 2px solid @accent;
-  box-shadow: 1px 2px 30px 2px rgba(17,17,27,0.87);
+  box-shadow: 1px 2px 30px 2px @shadow_col;
 }
 
 tooltip {
-  background: @background1;
-  border: 1px solid @accent;
+  background: @background_col;
+  border: 1px solid @accent_col;
   border-radius: 10px;
-  box-shadow: 1px 2px 30px 2px rgba(17,17,27,0.87);
+  box-shadow: 1px 2px 30px 2px @shadow_col;
 }
 
 tooltip label{
   font-size: 14px;
-  color: @accent;
+  color: @accent_col;
 }
 
 menu {
-	background:  @background1;
-	color: @accent;
-  border: 1px solid  @accent;
+	background:  @background_col;
+	color: @accent_col;
+  border: 1px solid  @accent_col;
   font-size: 14px;
   border-radius: 10px;
-  box-shadow: 1px 2px 30px 2px rgba(17,17,27,0.87);
+  box-shadow: 1px 2px 30px 2px @shadow_col;
 }
 
 menu :hover {
   color:  @accent;
-  background-color:  @background2;
-  border-left: 1px solid @accent;
-  border-right: 1px solid @accent;
+  background-color:  @foreground_col;
+  border-radius: 0;
 }
 
 .modules-left {
@@ -56,7 +54,9 @@ menu :hover {
 #network,
 #language,
 #custom-shutdown,
-#custom-menu,
+#window,
+#seperator,
+#custom-spotify,
 #workspaces button {
   border-radius: 0;
 	padding: 0px 11px 0px 11px; 
@@ -66,12 +66,18 @@ menu :hover {
 
 #workspaces button.active { 
 	padding: 0px 11px 0px 11px; 
-	color: @accent;
+	background-color: @accent_col;
+  color: @background_col;
+}
+
+#workspaces button.urgent {
+  background-color: @error_col;
+  color: @foreground_col;
 }
 
 #workspaces button:hover {
-  background: @accent;
-  color:  @background2;
+  background: @accent_col;
+  color: @background_col;
 }
 
 #language {
@@ -79,9 +85,9 @@ menu :hover {
 }
 
 #pulseaudio.muted {
-  background-color: @accent;
-  color: @background1;
-  border-bottom: 2px solid @accent;
+  background-color: @accent_col;
+  color: @background_col;
+  border-bottom: 2px solid @accent_col;
 }
 
 #clock {
@@ -94,18 +100,16 @@ menu :hover {
 }
 
 #tray > .needs-attention {
-	border-bottom: 2px solid @error;
+	border-bottom: 2px solid @error_col;
 }
 
-#custom-menu {
-  color: @accent;
-  font-size: 22px;
-}
-
-#custom-menu:hover,
 #custom-shutdown:hover,
 #bluetooth:hover,
 #pulseaudio:hover {
-  background: @accent;
-  color:  @background2;
+  background: @accent_col;
+  color:  @foreground_col;
+}
+
+#custom-spotify {
+  color: @text;
 }
