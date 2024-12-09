@@ -45,6 +45,7 @@ bindsym $alt+Shift+x exec --no-startup-id ~/.config/i3/scripts/change_kb_layout.
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+s exec --no-startup-id "$ maim -s | xclip -selection clipboard -t image/png"
 
 # Rofi
 bindsym $mod+space exec --no-startup-id rofi -show drun
