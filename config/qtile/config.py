@@ -112,5 +112,5 @@ wmname = "qtiled"
 
 @hook.subscribe.startup_once
 def autostart():
-  home = os.path.expanduser('~/.config/qtile/scripts/autorun.sh')
+  home = os.path.expanduser('~/.config/dotfiles/config/scripts/autorun.sh')
   subprocess.call([home])
