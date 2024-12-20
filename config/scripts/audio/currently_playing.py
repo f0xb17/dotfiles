@@ -1,34 +1,28 @@
-#!/usr/bin/env python3
 import subprocess
 
-def get_active_player():
-    result = subprocess.run(["playerctl", "-l"], stdout=subprocess.PIPE)
-    players = result.stdout.decode('utf-8').split('\n')
-    return players
+def get_current_playing_track():
+    try:
+        spotify_status = subprocess.run(['playerctl', '-p', 'spotify', 'status'], capture_output=True, text=True).stdout.strip()
+        
+        if spotify_status == "Playing":
+            spotify_artist = subprocess.run(['playerctl', '-p', 'spotify', 'metadata', 'xesam:artist'], capture_output=True, text=True).stdout.strip()
+            spotify_title = subprocess.run(['playerctl', '-p', 'spotify', 'metadata', 'xesam:title'], capture_output=True, text=True).stdout.strip()
+            return f"{spotify_artist} - {spotify_title}"
 
-def get_player_status(player):
-    result = subprocess.run(["playerctl", "-p", player, "status"], stdout=subprocess.PIPE)
-    return result.stdout.decode('utf-8').strip()
+        players = subprocess.run(['playerctl', '-l'], capture_output=True, text=True).stdout.split()
+        for player in players:
+            if player == "spotify":
+                continue
 
-def get_now_playing(player):
-    title = subprocess.run(["playerctl", "-p", player, "metadata", "title"], stdout=subprocess.PIPE).stdout.decode('utf-8').strip()
-    artist = subprocess.run(["playerctl", "-p", player, "metadata", "artist"], stdout=subprocess.PIPE).stdout.decode('utf-8').strip()
-    return f"{artist} - {title}"
+            status = subprocess.run(['playerctl', '-p', player, 'status'], capture_output=True, text=True).stdout.strip()
+            if status == "Playing":
+                artist = subprocess.run(['playerctl', '-p', player, 'metadata', 'xesam:artist'], capture_output=True, text=True).stdout.strip()
+                title = subprocess.run(['playerctl', '-p', player, 'metadata', 'xesam:title'], capture_output=True, text=True).stdout.strip()
+                return f"{artist} - {title}"
 
-def display_now_playing():
-    players = get_active_player()
-    if 'spotify' in players:
-        if get_player_status('spotify') == 'Playing':
-            print(get_now_playing('spotify'))
-            return
-        players.remove('spotify')
-    
-    for player in players:
-        if player:
-            status = get_player_status(player)
-            if status == 'Playing':
-                print(get_now_playing(player))
-                return
+        return "Empty Track"
+    except subprocess.CalledProcessError:
+        return "Empty Track"
 
 if __name__ == "__main__":
-    display_now_playing()
+    print(get_current_playing_track())
