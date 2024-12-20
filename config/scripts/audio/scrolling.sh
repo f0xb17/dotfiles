@@ -18,7 +18,7 @@ scroll_text() {
     done
 }
 
-TEXT=$(python ~/Repos/dotfiles/config/scripts/audio/currently_playing.py)
+TEXT=$(python ~/.config/dotfiles/config/scripts/audio/currently_playing.py)
 WIDTH=30
 DELAY=0.5
 
