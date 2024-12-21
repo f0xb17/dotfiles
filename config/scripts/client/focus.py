@@ -1,6 +1,16 @@
 #!/usr/bin/env python
-import argparse
+import argparse, subprocess, os
 from libqtile.command.client import InteractiveCommandClient
+
+def get_window_manager_name():
+    try:
+        result = subprocess.run(['wmctrl', '-m'], capture_output=True, text=True, check=True)
+        for line in result.stdout.split('\n'):
+            if line.startswith('Name:'):
+                wm_name = line.split(':')[1].strip()
+                return wm_name
+    except subprocess.CalledProcessError:
+        return None
 
 def focus_client(client_name):
     c = InteractiveCommandClient()
@@ -20,8 +30,12 @@ def main():
     
     args = parser.parse_args()
     client_name = args.client
+    current_directory = os.path.dirname(os.path.realpath(__file__)) + "/focus.sh"
 
-    focused = focus_client(client_name)
+    if get_window_manager_name() == "bspwm":
+        subprocess.run([current_directory, client_name], capture_output=True, text=True, check=True)
+    else:
+        focused = focus_client(client_name)
     
 if __name__ == "__main__":
     main()
