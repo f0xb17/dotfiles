@@ -229,6 +229,8 @@ pkgs=(
   "python-psutil"
   "xorg-xprop"
   "wmctrl"
+  "pavucontrol"
+  "blueman"
 # ----------- #  
   "bitwarden"
   "vlc"

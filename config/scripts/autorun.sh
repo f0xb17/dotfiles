@@ -12,3 +12,5 @@ dbus-update-activation-environment --all & disown
 gnome-keyring-daemon --start --components=ssh,secrets,pkcs11,login & disown
 
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1  & disown
+
+discord-canary --start-minimized & disown
