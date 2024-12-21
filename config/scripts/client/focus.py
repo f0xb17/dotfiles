@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 import argparse, subprocess, os, importlib.util
+
 def is_module_installed(module_name):
     spec = importlib.util.find_spec(module_name)
     return spec is not None
