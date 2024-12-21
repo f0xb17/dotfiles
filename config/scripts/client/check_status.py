@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import psutil, argparse
 
 def is_process_currently_running(process_name):
