@@ -2,9 +2,6 @@ from libqtile import qtile, layout, hook, bar
 from libqtile.config import Key, Click, Drag, Screen, Match, Group
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
-
-import os
-
 import os, subprocess
 
 modkey    = "mod4"
