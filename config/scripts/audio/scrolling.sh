@@ -4,9 +4,9 @@
 zscroll -l 30 \
         --delay 0.1 \
         --scroll-padding " | " \
-        --match-command "python ../../Repos/dotfiles/config/scripts/audio/currently_playing.py" \
+        --match-command "python Repos/dotfiles/config/scripts/audio/currently_playing.py" \
         --match-text "Playing" "--scroll 1" \
         --match-text "Paused" "--scroll 0" \
-        --update-check true "python ../../Repos/dotfiles/config/scripts/audio/currently_playing.py" &
+        --update-check true "python Repos/dotfiles/config/scripts/audio/currently_playing.py" &
 
 wait
