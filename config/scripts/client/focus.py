@@ -1,8 +1,5 @@
 #!/usr/bin/env python
-import argparse
-import subprocess
-import os
-import importlib.util
+import argparse, subprocess, os, importlib.util
 
 def is_module_installed(module_name):
     return importlib.util.find_spec(module_name) is not None
@@ -35,7 +32,7 @@ def main():
 
     if get_window_manager_name() == "bspwm":
         subprocess.run([current_directory, client_name], capture_output=True, text=True, check=True)
-    elif is_module_installed('libqtile'):
+    elif is_module_installed('libqtile') and get_window_manager_name() == "qtiled":
         focus_client(client_name)
     
 if __name__ == "__main__":
