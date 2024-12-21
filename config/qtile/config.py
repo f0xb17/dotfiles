@@ -17,7 +17,7 @@ keys = [
   Key([modkey, "shift"], "w", lazy.spawn(windows)),
   Key([modkey], "space", lazy.spawn(launcher)),
   Key([modkey, "shift"], "s", lazy.spawn(["sh", "-c", "maim -s | xclip -selection clipboard -t image/png"])),
-  Key([modkey, "shift"], "x", lazy.spawn(os.path.expanduser("python Repos/dotfiles/config/scripts/client/change_kblayout.py"))),
+  Key([modkey, "shift"], "x", lazy.spawn(os.path.expanduser("python .config/dotfiles/config/scripts/client/change_kblayout.py"))),
   # Move focus to other windows on current stack
   Key([modkey], "left", lazy.layout.left()),
   Key([modkey], "right", lazy.layout.right()),
