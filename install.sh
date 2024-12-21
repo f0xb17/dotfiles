@@ -280,6 +280,7 @@ aurpkgs=(
   "intellij-idea-community-edition-jre"
   "jdk-temurin"
   "zscroll-git"
+  "github-desktop-bin"
 )
 
 for pkg in ${aurpkgs[@]}; do
