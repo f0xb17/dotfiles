@@ -1,6 +1,6 @@
 #!/bin/sh
 
-feh --bg-scale --zoom fill ~/.config/bspwm/01.jpg
+feh --bg-scale --zoom fill ~/.config/dotfiles/config/01.jpg
 
 picom --config ~/.config/picom/picom.conf & disown
 

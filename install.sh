@@ -16,10 +16,10 @@ if [[ "$2" == "--kitty" ]]; then
   mkdir -p ~/.config/kitty
 
   echo "-- Kitty Config"
-  ln -sf $PWD/config/kitty/kitty.conf ~/.config/kitty/kitty.conf
+  ln -sf $PWD/config/kitty/kitty.conf ~/.config/kitty/
   
   echo "-- Kitty Theme"
-  ln -sf $PWD/config/kitty/kitty.conf ~/.config/kitty/kitty.conf
+  ln -sf $PWD/config/kitty/current-theme.conf ~/.config/kitty/
 fi
 
 # ---------------------------------------------
@@ -60,6 +60,12 @@ ln -sf $PWD/config/rofi/themes/dmenu.rasi ~/.config/rofi/themes/
 # ---------------------------------------------
 
 if [[ "$1"  == "--qtile" || "$1" == "--bspwm" ]]; then
+ 
+  echo "### .Xresources ###"
+
+  echo "-- Creating .Xresources"
+  ln -sf $PWD/config/scripts/.Xresources ~/
+
   echo "### Polybar ###"
 
   sudo pacman -S --needed --noconfirm polybar
@@ -99,6 +105,12 @@ sudo pacman -S --needed --noconfirm picom
 
   echo "-- Picom Config"
   ln -sf $PWD/config/picom/picom.conf ~/.config/picom/
+
+  echo "### Install X11-Packages ###"
+  sudo pacman -S --needed --noconfirm maim feh xdg-desktop-portal playerctl xorg-setxkbmap nwg-look xdg-desktop-portal-gtk
+
+  echo "### Install Gnome-Keyring Packages ###"
+  sudo pacman -S --needed --noconfirm gnome-keyring libsecret polkit-gnome
 fi
 
 # ---------------------------------------------
