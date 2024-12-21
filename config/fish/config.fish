@@ -16,11 +16,6 @@ fzf_configure_bindings --directory=\t
 set fzf_preview_dir_cmd eza --all --color=always
 set fzf_fd_opts --hidden --max-depth 1
 
-### SETUP TMUX ###
-status is-interactive; and begin
-    set fish_tmux_autostart true
-end
-
 ### PACMAN AND YAY ###
 alias install='sudo pacman -S --needed --noconfirm'
 alias update='sudo pacman -Syu && yay --noconfirm && fisher update'

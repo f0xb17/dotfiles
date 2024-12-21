@@ -2,7 +2,7 @@
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-MONITOR_NAME=":0"
+MONITOR_NAME="HDMI-0"
 
 bspc monitor $MONITOR_NAME -d 1 2 3 4 5 6
 
