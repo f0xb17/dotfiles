@@ -17,6 +17,7 @@ keys = [
   Key([modkey], "Return", lazy.spawn(terminal)),
   Key([modkey, "shift"], "w", lazy.spawn(windows)),
   Key([modkey], "space", lazy.spawn(launcher)),
+  Key([modkey, "shift"], "s", lazy.spawn(["sh", "-c", "maim -s | xclip -selection clipboard -t image/png"])),
   # Move focus to other windows on current stack
   Key([modkey], "left", lazy.layout.left()),
   Key([modkey], "right", lazy.layout.right()),
