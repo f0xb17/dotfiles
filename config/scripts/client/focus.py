@@ -1,5 +1,8 @@
 #!/usr/bin/env python
-import argparse, subprocess, os, importlib.util
+import argparse
+import subprocess
+import os
+import importlib.util
 
 def is_module_installed(module_name):
     return importlib.util.find_spec(module_name) is not None
@@ -22,18 +25,27 @@ def focus_client(client_name):
             c.group[window['group']].toscreen()
             return
 
+def focus_awesomewm_client(client_name):
+    # Command to focus or launch the app using AwesomeWM
+    command = f'echo \'require("modules.focus").focus_app("{client_name}")\' | awesome-client'
+    subprocess.run(command, shell=True, check=True)
+
 def main():
-    parser = argparse.ArgumentParser(description="Focus a specific client window in qtile")
+    parser = argparse.ArgumentParser(description="Focus a specific client window in qtile or awesomewm")
     parser.add_argument('--client', type=str, required=True, help="Name of the client to focus")
     
     args = parser.parse_args()
     client_name = args.client
-    current_directory = os.path.join(os.path.dirname(os.path.realpath(__file__)), "focus.sh")
 
-    if get_window_manager_name() == "bspwm":
+    wm_name = get_window_manager_name()
+    if wm_name == "bspwm":
+        current_directory = os.path.join(os.path.dirname(os.path.realpath(__file__)), "focus.sh")
         subprocess.run([current_directory, client_name], capture_output=True, text=True, check=True)
-    elif is_module_installed('libqtile') and get_window_manager_name() == "qtiled":
-        focus_client(client_name)
+    elif wm_name == "Qtile":
+        if is_module_installed('libqtile'):
+            focus_client(client_name)
+    elif wm_name == "awesome":
+        focus_awesomewm_client(client_name)
     
 if __name__ == "__main__":
     main()

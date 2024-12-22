@@ -59,7 +59,7 @@ ln -sf $PWD/config/rofi/themes/dmenu.rasi ~/.config/rofi/themes/
 
 # ---------------------------------------------
 
-if [[ "$1"  == "--qtile" || "$1" == "--bspwm" ]]; then
+if [[ "$1"  == "--qtile" || "$1" == "--bspwm" || "$1" == "--aws" ]]; then
  
   echo "### .Xresources ###"
 
@@ -133,6 +133,14 @@ if [[ "$1" == "--qtile" ]]; then
   echo "-- Creating Qtile Folder(s)"
   mkdir -p ~/.config/qtile
   ln -sf $PWD/config/qtile/config.py ~/.config/qtile/
+fi
+
+if [[ "$1" == "--aws" ]]; then
+  echo "-- Creating awesome Folder(s)"
+  mkdir -p ~/.config/awesome
+  ln -sf $PWD/config/awesome/rc.lua ~/.config/awesome/
+  ln -sf $PWD/config/awesome/theme.lua ~/.config/awesome/
+  ln -sf $PWD/config/awesome/modules ~/.config/awesome/
 fi
 
 # ---------------------------------------------
