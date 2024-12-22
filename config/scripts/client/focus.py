@@ -26,7 +26,6 @@ def focus_client(client_name):
             return
 
 def focus_awesomewm_client(client_name):
-    # Command to focus or launch the app using AwesomeWM
     command = f'echo \'require("modules.focus").focus_app("{client_name}")\' | awesome-client'
     subprocess.run(command, shell=True, check=True)
 
