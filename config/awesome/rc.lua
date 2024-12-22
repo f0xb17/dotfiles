@@ -55,7 +55,7 @@ awful.screen.connect_for_each_screen(function (s)
     awful.tag({ "1", "2", "3", "4", "5", "6" }, s, awful.layout.layouts[1])
 
     awful.screen.connect_for_each_screen(function(s)
-        s.padding = { top = 55 }  -- Adjust the top padding as needed
+        s.padding = { top = 45 }  -- Adjust the top padding as needed
     end)
 end)
 
@@ -70,7 +70,7 @@ globalkeys = gears.table.join(
               {description = "show rofi drun menu", group = "launcher"}),
     awful.key({ modkey, "Shift" }, "w", function () awful.spawn("rofi -show window") end,
               {description = "show rofi window menu", group = "launcher"}),
-    awful.key({ altkey, "Shift" }, "x", function () awful.spawn.with_shell("~/.config/.dotfiles/config/i3/scripts/change_kb_layout.sh") end,
+    awful.key({ modkey, "Shift" }, "x", function () awful.spawn.with_shell("python ~/.config/dotfiles/config/scripts/client/change_kblayout.py") end,
               {description = "change keyboard layout", group = "awesome"})
 )
 
@@ -93,6 +93,18 @@ clientkeys = gears.table.join(
             awful.client.focus.bydirection("right")
                 if client.focus then client.focus:raise() end
             end),
+    awful.key({ modkey, "Shift" }, "Left", function () 
+            awful.client.swap.bydirection("left") 
+            end),
+    awful.key({ modkey, "Shift" }, "Right", function () 
+            awful.client.swap.bydirection("right") 
+            end),
+    awful.key({ modkey, "Shift" }, "Up", function () 
+            awful.client.swap.bydirection("up") 
+            end),
+    awful.key({ modkey, "Shift" }, "Down", function () 
+            awful.client.swap.bydirection("down") 
+            end),     
     awful.key({ modkey, "Shift" }, "s", function () awful.spawn.with_shell("maim -s | xclip -selection clipboard -t image/png") end,
               {description = "Take a screenshot", group = "Launcher"})
 )
@@ -149,15 +161,38 @@ awful.rules.rules = {
             placement = awful.placement.centered
         }
     },
-    { rule = { class = "dialog" },
+    {
+        rule_any = {
+            class = {
+                "dialog",
+                "popup",
+                "confirm",
+                "error",
+                "notification",
+                "toolbar",
+                "splash",
+                "file_progress",
+                "file_open",
+                "file_save"
+            },
+        },
         properties = { floating = true }
     },
-    { rule = { class = "confirmreset" },
-        properties = { floating = true }
-    },
-    { rule = { class = "branchdialog" },
-        properties = { floating = true }
-    },
+    {
+        rule_any = {
+            class = {
+                "zoom",
+                "zoom meeting",
+                "Zoom",
+                "Zoom Meeting"
+            },
+        },
+        properties = {
+            floating = true,
+            width = 1920,
+            height = 1080
+        }
+    },    
 }
 
 client.connect_signal("manage", function (c) 
