@@ -25,7 +25,7 @@ super + shift + s
 
 # change keyboard layout
 super + shift + x
-	~/.config/.dotfiles/config/i3/scripts/change_kb_layout.sh
+	python ~/.config/dotfiles/config/scripts/client/change_kblayout.py
 
 #
 # BSPWM settings

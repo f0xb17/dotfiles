@@ -125,7 +125,7 @@ if [[ "$1" == "--bspwm" ]]; then
 
   echo "-- Creating SXHKD Folder(s)"
   mkdir -p ~/.config/sxhkd
-  ln -sf $PWD/config/bspwm/sxhkdrc ~/.config/sxhkd/
+  ln -sf $PWD/config/sxhkd/sxhkdrc ~/.config/sxhkd/
   chmod 644 $PWD/config/bspwm/sxhkdrc
 fi
 
