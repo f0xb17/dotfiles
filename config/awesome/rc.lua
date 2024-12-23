@@ -5,7 +5,9 @@ local gears = require("gears")
 local awful = require("awful")
 require("awful.autofocus")
 local beautiful = require("beautiful")
+
 local focus = require("modules.focus")
+
 
 if awesome.startup_errors then
     naughty.notify({ preset = naughty.config.presets.critical,

@@ -1,8 +1,8 @@
 local awful = require("awful")
 
-local M = {}
+local client_module = {}
 
-function M.focus_app(app_name)
+function client_module.focus_app(app_name)
     local clients = client.get()
     local found_client = nil
 
@@ -23,4 +23,4 @@ function M.focus_app(app_name)
     end
 end
 
-return M
+return client_module

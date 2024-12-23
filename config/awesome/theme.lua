@@ -18,10 +18,10 @@ theme.bg_focus      = "#272E33"
 theme.bg_urgent     = "#E67E80"
 theme.bg_minimize   = "#444444"
 
-theme.fg_normal     = "#272E33"
-theme.fg_focus      = "#ffffff"
+theme.fg_normal     = "#D3C6AA"
+theme.fg_focus      = "#D3C6AA"
 theme.fg_urgent     = "#ffffff"
-theme.fg_minimize   = "#ffffff"
+theme.fg_minimize   = "#D3C6AA"
 
 theme.useless_gap   = dpi(5)
 theme.gap_single_client = true

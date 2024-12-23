@@ -4,8 +4,8 @@ feh --bg-scale --zoom fill ~/.config/dotfiles/config/01.jpg
 
 picom --config ~/.config/picom/picom.conf & disown
 
-polybar &
 dunst &
+polybar & disown
 
 dbus-update-activation-environment --all & disown
 
