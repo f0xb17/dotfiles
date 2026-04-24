@@ -1,9 +1,9 @@
 # Font
-font-family = TX-02
+font-family = MonoLisa
 font-size = 14
 
 # Window
-theme = Gruvbox Dark Hard
+theme = TokyoNight
 maximize = true
 cursor-style = block
 adjust-cell-height = 35%
