@@ -24,10 +24,9 @@ unlink_existing() {
     done
 }
 
-read -r -p "Create config symlinks? [y/N] " response
-if [[ "$response" =~ ^[Yy]$ ]]; then
-    unlink_existing "${SYMLINK_APPS[@]}"
-    for app in "${SYMLINK_APPS[@]}"; do
+create_symlinks() {
+    local -ra apps=("$@")
+    for app in "${apps[@]}"; do
         src="$DOTFILES_DIR/config/$app"
         dest="$CONFIG_DIR/$app"
         if [[ -d "$src" ]]; then
@@ -39,17 +38,12 @@ if [[ "$response" =~ ^[Yy]$ ]]; then
             fi
         fi
     done
-fi
-
-unlink_existing() {
-    local -ra apps=("$@")
-    for app in "${apps[@]}"; do
-        dest="$CONFIG_DIR/$app"
-        if [[ -L "$dest" ]]; then
-            rm "$dest"
-            echo "Unlinked: $app"
-        fi
-    done
 }
+
+read -r -p "Create config symlinks? [y/N] " response
+if [[ "$response" =~ ^[Yy]$ ]]; then
+    unlink_existing "${SYMLINK_APPS[@]}"
+    create_symlinks "${SYMLINK_APPS[@]}"
+fi
 
 echo "Done."
