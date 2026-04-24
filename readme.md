@@ -14,6 +14,7 @@ My dotfiles setup for macOS. Uses Homebrew to install terminal software and crea
 ```
 
 The installer will prompt you for:
+
 1. Installing Homebrew and terminal software
 2. Creating config symlinks (currently supports ghostty)
 
@@ -23,4 +24,4 @@ The installer will prompt you for:
 - Helix editor config (`config/helix/`)
 - Starship prompt config (`config/starship.toml`)
 - Zsh config (`config/.zshrc`)
-- Settings (`settings.json`)
+- Settings for VS-Codium (`settings.json`)
