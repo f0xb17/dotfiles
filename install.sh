@@ -9,8 +9,11 @@ SYMLINK_DIRS=(
 )
 
 SYMLINK_FILES=(
-    .zshrc
-    starship.toml
+    config/starship.toml
+)
+
+SYMLINK_HOME=(
+    config/.zshrc
 )
 
 read -r -p "Install Homebrew and terminal software? [y/N] " response
@@ -21,7 +24,12 @@ fi
 unlink_existing() {
     for item in "$@"; do
         if [[ "$item" == config/* ]]; then
-            dest="$CONFIG_DIR/${item#config/}"
+            local stripped="${item#config/}"
+            if [[ "$stripped" == .zshrc ]]; then
+                dest="$HOME/.zshrc"
+            else
+                dest="$CONFIG_DIR/$stripped"
+            fi
         else
             dest="$HOME/$item"
         fi
@@ -36,11 +44,15 @@ unlink_existing() {
 }
 
 create_symlinks() {
-    local -ra dirs=("$@")
-    for item in "${dirs[@]}"; do
+    for item in "$@"; do
         if [[ "$item" == config/* ]]; then
             src="$DOTFILES_DIR/$item"
-            dest="$CONFIG_DIR/${item#config/}"
+            local stripped="${item#config/}"
+            if [[ "$stripped" == .zshrc ]]; then
+                dest="$HOME/.zshrc"
+            else
+                dest="$CONFIG_DIR/$stripped"
+            fi
         else
             src="$DOTFILES_DIR/$item"
             dest="$HOME/$item"
@@ -51,7 +63,7 @@ create_symlinks() {
             else
                 mkdir -p "$(dirname "$dest")"
                 ln -s "$src" "$dest"
-                echo "Linked: $item"
+                echo "Linked: $item -> $dest"
             fi
         fi
     done
@@ -59,8 +71,8 @@ create_symlinks() {
 
 read -r -p "Create config symlinks? [y/N] " response
 if [[ "$response" =~ ^[Yy]$ ]]; then
-    unlink_existing "${SYMLINK_DIRS[@]}" "${SYMLINK_FILES[@]}"
-    create_symlinks "${SYMLINK_DIRS[@]}" "${SYMLINK_FILES[@]}"
+    unlink_existing "${SYMLINK_DIRS[@]}" "${SYMLINK_FILES[@]}" "${SYMLINK_HOME[@]}"
+    create_symlinks "${SYMLINK_DIRS[@]}" "${SYMLINK_FILES[@]}" "${SYMLINK_HOME[@]}"
 fi
 
 echo "Done."
