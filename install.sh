@@ -20,6 +20,9 @@ unlink_existing() {
         if [[ -L "$dest" ]]; then
             rm "$dest"
             echo "Unlinked: $app"
+        elif [[ -f "$dest" ]]; then
+            rm "$dest"
+            echo "Removed: $app"
         fi
     done
 }
@@ -29,7 +32,7 @@ create_symlinks() {
     for app in "${apps[@]}"; do
         src="$DOTFILES_DIR/config/$app"
         dest="$CONFIG_DIR/$app"
-        if [[ -d "$src" ]]; then
+        if [[ -d "$src" ]] || [[ -f "$src" ]]; then
             if [[ -L "$dest" ]] || [[ -e "$dest" ]]; then
                 echo "Skipping $app: already exists"
             else
