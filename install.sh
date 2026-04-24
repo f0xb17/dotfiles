@@ -13,6 +13,17 @@ if [[ "$response" =~ ^[Yy]$ ]]; then
     bash "$DOTFILES_DIR/brew.sh"
 fi
 
+unlink_existing() {
+    local -ra apps=("$@")
+    for app in "${apps[@]}"; do
+        dest="$CONFIG_DIR/$app"
+        if [[ -L "$dest" ]]; then
+            rm "$dest"
+            echo "Unlinked: $app"
+        fi
+    done
+}
+
 read -r -p "Create config symlinks? [y/N] " response
 if [[ "$response" =~ ^[Yy]$ ]]; then
     unlink_existing "${SYMLINK_APPS[@]}"
