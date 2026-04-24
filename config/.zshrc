@@ -23,14 +23,13 @@ zinit light Aloxaf/fzf-tab
 
 zinit snippet OMZL::git.zsh
 zinit snippet OMZP::git
-zinit snippet OMZP::archlinux
 zinit snippet OMZP::sudo
 zinit snippet OMZP::command-not-found
 
 # -- Environment Variables
 
-export EDITOR="nvim"
-export VISUAL="nvim"
+export EDITOR="hx"
+export VISUAL="hx"
 export TERMINAL="ghostty"
 export TERM="xterm-256color"
 export BROWSER="brave"
@@ -41,9 +40,6 @@ setopt extended_glob null_glob
 
 path=(
   $path
-  $HOME/bin
-  $HOME/.local/bin
-  $HOME/go
 )
 
 typeset -U path
@@ -65,39 +61,25 @@ setopt hist_save_no_dups
 # -- Aliases
 
 alias ls="eza -al --color=always --group-directories-first --icons --git"
-alias nv="nvim"
 alias c="clear"
 alias ff="fastfetch"
-alias dotfiles="cd ~/.config/dotfiles/"
 
 alias cat="bat"
 alias catnn="bat --style=numbers"
 alias catn="bat --style=numbers,changes"
 
-alias install="sudo pacman -S --needed --noconfirm"
-alias update="sudo pacman -Syyu --noconfirm && flatpak update -y"
-alias remove="sudo pacman -Rncs --noconfirm"
-alias unlock="sudo rm /var/lib/pacman/db.lck"
-alias clean="cd /var/cache/pacman/pkg && sudo rm -rf * && cd ~/.cache/ && sudo rm -rf * && cd"
-
-
-alias y="yay -S --needed --noconfirm"
-alias yr="yay -Rncs --noconfirm"
+alias install="brew install"
+alias update="brew update && brew upgrade && brew cleanup"
+alias remove="brew uninstall"
+alias clean="brew cleanup; sudo rm -rf /private/var/log/* ; rm -rf ~/Library/Caches/*"
 
 alias gp="git pull"
 alias gs="git status"
 alias gc="gh repo clone"
-alias repo="cd ~/repos/"
 alias builds="cd ~/builds/"
-alias repos="cd ~/Repos/"
 alias dot="cd ~/.config/dotfiles/"
 
 # -- Sourcing
-
-# -- If tmux is to be started directly with the session, uncomment these lines. 
-# if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-# exec tmux new-session -A -s default
-# fi
 
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
