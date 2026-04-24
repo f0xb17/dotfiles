@@ -72,7 +72,7 @@ create_symlinks() {
 read -r -p "Create config symlinks? [y/N] " response
 if [[ "$response" =~ ^[Yy]$ ]]; then
     unlink_existing "${SYMLINK_DIRS[@]}" "${SYMLINK_FILES[@]}" "${SYMLINK_HOME[@]}"
-    create_symlinks "${SYMLINK_DIRS[@]}" "${SYMLINK_FILES[@]}" "${SYMLINK_HOME}"
+    create_symlinks "${SYMLINK_DIRS[@]}" "${SYMLINK_FILES[@]}" "${SYMLINK_HOME[@]}"
 fi
 
 echo "Done."
