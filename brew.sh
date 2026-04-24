@@ -4,7 +4,7 @@ set -euo pipefail
 TERMINAL_SOFTWARE=(
   fzf
   zoxide
-  exa
+  eza
   fd
   bat
   starship
@@ -17,10 +17,10 @@ install_from_array() {
             echo "Already installed: $pkg"
         else
             echo "Installing: $pkg"
-            if brew search --cask "^${pkg}$" &>/dev/null; then
-                brew install --cask "$pkg"
+            if brew install "$pkg"; then
+                true
             else
-                brew install "$pkg"
+                brew install --cask "$pkg"
             fi
         fi
     done

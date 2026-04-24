@@ -5,7 +5,6 @@ DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 CONFIG_DIR="$HOME/.config"
 
 SYMLINK_APPS=(
-    helix
     ghostty
 )
 
@@ -16,8 +15,9 @@ fi
 
 read -r -p "Create config symlinks? [y/N] " response
 if [[ "$response" =~ ^[Yy]$ ]]; then
+    unlink_existing "${SYMLINK_APPS[@]}"
     for app in "${SYMLINK_APPS[@]}"; do
-        src="$DOTFILES_DIR/$app"
+        src="$DOTFILES_DIR/config/$app"
         dest="$CONFIG_DIR/$app"
         if [[ -d "$src" ]]; then
             if [[ -L "$dest" ]] || [[ -e "$dest" ]]; then
@@ -29,5 +29,16 @@ if [[ "$response" =~ ^[Yy]$ ]]; then
         fi
     done
 fi
+
+unlink_existing() {
+    local -ra apps=("$@")
+    for app in "${apps[@]}"; do
+        dest="$CONFIG_DIR/$app"
+        if [[ -L "$dest" ]]; then
+            rm "$dest"
+            echo "Unlinked: $app"
+        fi
+    done
+}
 
 echo "Done."
