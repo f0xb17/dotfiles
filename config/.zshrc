@@ -71,7 +71,7 @@ alias catn="bat --style=numbers,changes"
 alias install="brew install"
 alias update="brew update && brew upgrade && brew cleanup"
 alias remove="brew uninstall"
-alias clean="brew cleanup -s; sudo rm -i -rf /private/var/log/* ; sudo \rm -i -rf ~/Library/Caches/*; sudo \rm -i -rf ~/Library/Caches/com.spotify.client/Data/*"
+alias clean="brew cleanup -s; sudo rm -i -rf /private/var/log/* ; for d in ~/Library/Caches/*/; do [[ \"$d\" == *BraveSoftware* ]] || sudo rm -rf \"$d\"; done; sudo \rm -i -rf ~/Library/Caches/com.spotify.client/Data/*"
 
 alias gp="git pull"
 alias gs="git status"
