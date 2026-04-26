@@ -71,7 +71,7 @@ alias catn="bat --style=numbers,changes"
 alias install="brew install"
 alias update="brew update && brew upgrade && brew cleanup"
 alias remove="brew uninstall"
-alias clean='brew cleanup -s && find ~/Library/Caches -mindepth 1 -not -path "*BraveSoftware*" -exec rm -rf {} + && rm -rf ~/Library/Logs/*'
+alias clean='brew cleanup -s && find ~/Library/Caches -mindepth 1 -not -path "*Mozilla*" -exec rm -rf {} + && rm -rf ~/Library/Logs/*'
 
 alias gp="git pull"
 alias gs="git status"
