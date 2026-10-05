@@ -1,18 +1,23 @@
 {
   // ### Visuals ###
-  "editor.fontFamily": "MonoLisa",
+  "editor.fontFamily": "Ioskeley Mono",
   "editor.fontSize": 14,
   "editor.lineHeight": 1.5,
   "editor.fontLigatures": "'feat','ures'",
   "window.title": "${rootName}",
   "window.titleBarStyle": "custom",
-  "files.simpleDialog.enable": true,
-  "workbench.sideBar.location": "right",
-  "window.menuBarVisibility": "toggle",
+  "files.simpleDialog.enable": false,
+  "workbench.sideBar.location": "left",
   "editor.renderWhitespace": "boundary",
-  "workbench.preferredLightColorTheme": "Default Dark Modern",
-  "workbench.preferredDarkColorTheme": "Default Dark Modern",
-  "workbench.preferredHighContrastLightColorTheme": "Default Dark Modern",
+  "workbench.activityBar.location": "top",
+  "workbench.tree.indent": 12,
+  "workbench.tree.renderIndentGuides": "none",
+  "workbench.statusBar.visible": false,
+  "workbench.preferredLightColorTheme": "Cursor Light",
+  "workbench.preferredDarkColorTheme": "Lina",
+  "workbench.preferredHighContrastLightColorTheme": "Cursor Dark Midnight High Contrast",
+  "workbench.iconTheme": "vscode-jetbrains-icon-theme-2023-auto",
+  "window.autoDetectColorScheme": true,
 
   // ### Don't restore any windows ###
   "window.restoreWindows": "none",
@@ -63,20 +68,14 @@
   "workbench.tree.expandMode": "singleClick",
 
   // ### Terminal ###
-  // "terminal.integrated.fontFamily": "Maple Mono NF",
-  // "terminal.integrated.fontSize": 15,
-  "terminal.integrated.defaultProfile.linux": "bash",
-  "terminal.integrated.profiles.linux": {
-    "bash": {
-      "path": "host-spawn",
-      "args": ["bash"],
-    },
-  },
+  "terminal.integrated.fontFamily": "Ioskeley Mono",
+  "terminal.integrated.fontSize": 15,
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.fontWeight": "300",
   "terminal.integrated.persistentSessionReviveProcess": "never",
   "terminal.integrated.tabs.enabled": true,
+  "terminal.integrated.initialHint": false,
 
   // ### Security ###
   "security.workspace.trust.untrustedFiles": "open",
@@ -108,20 +107,11 @@
     "**/LICENSE*": true,
   },
 
-  // ### Plugins ###
-  // "go.alternateTools": {
-  //  "go": "/home/fox/.sdk/go/bin"
-  // },
-
   "css.lint.hexColorLength": "ignore",
   "prettier.enable": true,
   "prettier.printWidth": 200,
   "prettier.semi": false,
   "prettier.singleQuote": true,
 
-  "liveServer.settings.donotVerifyTags": true,
-  "liveServer.settings.donotShowInfoMsg": true,
   "git.openRepositoryInParentFolders": "never",
-  "terminal.integrated.initialHint": false,
-  "workbench.iconTheme": "catppuccin-mocha",
 }
