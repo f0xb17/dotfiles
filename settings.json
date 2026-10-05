@@ -1,22 +1,24 @@
 {
   // ### Visuals ###
   "editor.fontFamily": "Ioskeley Mono",
-  "editor.fontSize": 14,
-  "editor.lineHeight": 1.5,
+  "editor.fontSize": 15,
+  "editor.lineHeight": 1.6,
   "editor.fontLigatures": "'feat','ures'",
   "window.title": "${rootName}",
   "window.titleBarStyle": "custom",
   "files.simpleDialog.enable": false,
-  "workbench.sideBar.location": "left",
+  "workbench.sideBar.location": "right",
   "editor.renderWhitespace": "boundary",
   "workbench.activityBar.location": "top",
   "workbench.tree.indent": 12,
   "workbench.tree.renderIndentGuides": "none",
   "workbench.statusBar.visible": false,
-  "workbench.preferredLightColorTheme": "Cursor Light",
-  "workbench.preferredDarkColorTheme": "Lina",
-  "workbench.preferredHighContrastLightColorTheme": "Cursor Dark Midnight High Contrast",
-  "workbench.iconTheme": "vscode-jetbrains-icon-theme-2023-auto",
+  "workbench.secondarySideBar.defaultVisibility": "hidden",
+  "workbench.secondarySideBar.showLabels": false,
+  "workbench.preferredLightColorTheme": "Tokyo Night Light",
+  "workbench.preferredDarkColorTheme": "Tokyo Night",
+  "workbench.preferredHighContrastLightColorTheme": "Default High Contrast Light",
+  "workbench.iconTheme": "jetbrains-file-icon-theme-auto",
   "window.autoDetectColorScheme": true,
 
   // ### Don't restore any windows ###
@@ -114,4 +116,7 @@
   "prettier.singleQuote": true,
 
   "git.openRepositoryInParentFolders": "never",
+
+  "telemetry.feedback.enabled": false,
+  "telemetry.telemetryLevel": "off",
 }
