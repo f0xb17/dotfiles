@@ -26,14 +26,6 @@ zinit snippet OMZP::git
 zinit snippet OMZP::sudo
 zinit snippet OMZP::command-not-found
 
-# -- Environment Variables
-
-export EDITOR="hx"
-export VISUAL="hx"
-export TERMINAL="ghostty"
-export TERM="xterm-256color"
-export BROWSER="brave"
-
 # -- Path
 
 setopt extended_glob null_glob
@@ -71,7 +63,6 @@ alias catn="bat --style=numbers,changes"
 alias install="brew install"
 alias update="brew update && brew upgrade && brew cleanup"
 alias remove="brew uninstall"
-alias clean='brew cleanup -s && find ~/Library/Caches -mindepth 1 -not -path "*Mozilla*" -exec rm -rf {} + && rm -rf ~/Library/Logs/*'
 
 alias gp="git pull"
 alias gs="git status"
@@ -98,3 +89,6 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
 # -- Starship
 
 eval "$(starship init zsh)"
+
+# To hide the Homebrew environment hints
+export HOMEBREW_NO_ENV_HINTS=1
