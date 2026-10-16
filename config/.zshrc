@@ -51,6 +51,7 @@ setopt share_history
 setopt hist_save_no_dups
 
 # -- Aliases
+alias code='/Applications/VSCodium.app/Contents/Resources/app/bin/codium'
 
 alias ls="eza -al --color=always --group-directories-first --icons --git"
 alias c="clear"
