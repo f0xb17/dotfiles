@@ -8,6 +8,12 @@ TERMINAL_SOFTWARE=(
   fd
   bat
   starship
+  openlogi
+  dotnet
+  rust
+  pnpm
+  node
+  mole
 )
 
 install_from_array() {
