@@ -14,6 +14,7 @@ TERMINAL_SOFTWARE=(
   pnpm
   node
   mole
+  ghostty
 )
 
 install_from_array() {
